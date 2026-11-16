@@ -1,82 +1,113 @@
 # Barbearia do Porto 💈⚓
 
-> **Projeto demonstrativo — empresa fictícia.** Desenvolvido por Arthur Moreira.
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-6-CA4245?logo=reactrouter&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![Vercel](https://img.shields.io/badge/deploy-Vercel-000000?logo=vercel&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-Site de agendamento para um bar e barbearia fictício no Centro Histórico de São Luís – MA.
-O "bar" já está dentro de "barbearia": você corta o cabelo ou faz a barba tomando um chopp,
-um drink ou um café. *Chegue pro corte, fique pro chopp.*
+> **Projeto demonstrativo, com empresa fictícia.**
 
-## Problema → Solução
+Site com agendamento online para um bar e barbearia fictício no Centro Histórico de São Luís – MA. O "bar" já está dentro da "barbearia": o cliente corta o cabelo ou faz a barba tomando um chopp, um drink ou um café. *Chegue pro corte, fique pro chopp.*
 
-Barbearias pequenas ainda agendam por DM e telefone: horário duplicado, cliente sem
-resposta, agenda no caderno. Este modelo mostra um fluxo de agendamento completo que
-roda sem backend — o cliente escolhe serviço, barbeiro, data, horário (só aparecem
-horários realmente possíveis), bebida e confirma pelo WhatsApp em menos de 1 minuto.
+---
+
+## Problema e solução
+
+Barbearias pequenas ainda agendam por mensagem e telefone: horário marcado duas vezes, cliente sem resposta, agenda no caderno. Este projeto mostra um fluxo de agendamento completo que **funciona sem back-end**. O cliente escolhe o serviço, o barbeiro, a data, o horário (só aparecem horários realmente possíveis) e uma bebida, e confirma pelo WhatsApp em menos de um minuto.
+
+---
+
+## Destaques
+
+- **Agenda com regras de verdade:** a grade de horários considera expediente, folgas, horários passados, horários ocupados e a duração do serviço. Um corte de 1 hora não aparece às 20h30, porque não terminaria antes do fechamento.
+- **Ocupação simulada determinística:** cada combinação de barbeiro e dia gera sempre os mesmos horários ocupados, calculados a partir da data atual. A agenda nunca parece vazia nem lotada, e não muda ao recarregar a página.
+- **Agendamentos persistidos no navegador:** um horário agendado bloqueia a grade e volta a ficar livre se for cancelado.
+- **Módulo de agendamento reaproveitável:** a pasta `booking/` não depende dos dados da barbearia. Ela recebe serviços, profissionais e bebidas por props e pode ser usada em outros negócios.
+
+---
 
 ## Funcionalidades
 
-- **Landing page completa:** hero, serviços, cardápio do bar, barbeiros, Clube do Porto
-  (assinatura), galeria, depoimentos, contato com mapa.
-- **Fluxo de agendamento em 7 passos** com barra de progresso, resumo lateral
-  (fixo embaixo no celular) e botão Voltar.
-- **Regras de agenda de verdade:** expediente ter–sáb 10h–21h, dias de folga por
-  barbeiro, horários passados/ocupados desabilitados, o atendimento precisa caber
-  inteiro antes do fechamento, "sem preferência" atribui um barbeiro livre.
-- **Ocupação simulada determinística** por (barbeiro, dia), gerada em relação à data
-  atual — a agenda nunca parece vazia nem lotada.
-- **Persistência em `localStorage`:** recarregar não perde nada; um horário agendado
-  bloqueia a grade e volta a liberar se for cancelado.
-- **Confirmação via WhatsApp** com mensagem formatada automaticamente.
-- **Meus agendamentos:** lista, cancelamento com confirmação e estado vazio.
-- Pré-seleção vinda da home: `/agendar?servico=corte` e `/agendar?barbeiro=lp`.
-- Acessibilidade: navegação por teclado, `aria-*` nos controles do fluxo, foco visível,
-  `alt` nas imagens.
+### Landing page
 
-## Stack
+Hero, serviços com preço e duração, cardápio do bar, apresentação dos barbeiros, **Clube do Porto** (planos de assinatura mensal), galeria, depoimentos e contato com mapa. Os botões da home já abrem o agendamento com a escolha feita, por exemplo `/agendar?servico=corte` ou `/agendar?barbeiro=lp`.
 
-- **React 18 + Vite** (JavaScript)
-- **React Router** — rotas `/`, `/agendar`, `/meus-agendamentos`
-- **CSS puro com variáveis** (tokens de design em `src/styles/tokens.css`)
-- Dados em **JSON locais** (`src/data/`), sem backend
-- Deploy: **Vercel** (`vercel.json` com rewrite de SPA)
+### Agendamento em 7 passos
 
-## Rodando
+| Passo | O que o cliente faz |
+|---|---|
+| 1. Serviços | Escolhe um ou mais serviços, como corte, barba, sobrancelha ou pigmentação |
+| 2. Barbeiro | Escolhe um barbeiro ou marca "sem preferência", e o sistema atribui um que esteja livre |
+| 3. Data | Escolhe o dia; dias fechados e folgas do barbeiro ficam bloqueados |
+| 4. Horário | Vê só os horários em que o atendimento cabe inteiro |
+| 5. Bebida | Escolhe uma bebida do bar para acompanhar o atendimento |
+| 6. Dados | Informa nome e WhatsApp, com validação dos dois campos |
+| 7. Resumo | Confere tudo e confirma pelo WhatsApp com uma mensagem montada automaticamente |
+
+O fluxo tem barra de progresso, botão Voltar e um resumo lateral, que no celular fica fixo na parte de baixo da tela.
+
+### Meus agendamentos
+
+Lista dos agendamentos feitos no navegador, com cancelamento (pedindo confirmação) e uma tela própria para quando não há nenhum agendamento.
+
+### Regras da agenda
+
+| Regra | Valor |
+|---|---|
+| Dias de funcionamento | Terça a sábado (domingo e segunda fechado) |
+| Horário | 10h às 21h |
+| Intervalo da grade | 30 minutos |
+| Fechamento | O atendimento precisa terminar até as 21h |
+
+### Acessibilidade
+
+Navegação por teclado, atributos `aria-*` nos controles do agendamento, foco visível e texto alternativo nas imagens.
+
+---
+
+## Tecnologias
+
+| Camada | Tecnologias |
+|---|---|
+| Interface | React 18 · JavaScript |
+| Build | Vite 5 |
+| Rotas | React Router 6 (`/`, `/agendar`, `/meus-agendamentos`) |
+| Estilo | CSS puro com variáveis (tokens de design em `src/styles/tokens.css`) |
+| Dados | Arquivos JSON locais em `src/data/` · `localStorage` para os agendamentos |
+| Deploy | Vercel (`vercel.json` com rewrite para SPA) |
+
+---
+
+## Estrutura
+
+```
+src/
+├── components/   # Header, Footer, WhatsAppButton
+├── sections/     # Hero, Servicos, OBar, Barbeiros, Clube, Galeria, Depoimentos, Contato
+├── booking/      # BookingFlow, useBooking, BookingSummary e os 7 passos (steps/)
+├── pages/        # Home, Agendar, MeusAgendamentos
+├── data/         # services, barbers, drinks, testimonials (.json)
+├── utils/        # slots (regras da agenda), storage, whatsapp, format, photos
+└── styles/       # tokens.css, global.css
+```
+
+---
+
+## Como rodar localmente
+
+**Pré-requisito:** Node.js 18 ou mais novo.
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Estrutura
-
-```
-src/
-├─ components/   Header, Footer, WhatsAppButton
-├─ sections/     Hero, Servicos, OBar, Barbeiros, Clube, Galeria, Depoimentos, Contato
-├─ booking/      BookingFlow, useBooking, BookingSummary, steps/
-├─ pages/        Home, Agendar, MeusAgendamentos
-├─ data/         services, barbers, drinks, testimonials (.json)
-├─ utils/        slots, storage, whatsapp, format, photos
-└─ styles/       tokens.css, global.css
-```
-
-A pasta `booking/` é independente dos dados da barbearia: recebe serviços,
-profissionais e bebidas por props, para reaproveitar em outros projetos.
-
-## Créditos das fotos
-
-Logo e fotos dos barbeiros: geradas por IA para este projeto fictício.
-Duas fotos da galeria (`galeria-navalha.png` e `galeria-chopp.webp`) foram
-escolhidas e fornecidas pelo autor.
-Demais fotos via [Unsplash](https://unsplash.com) (licença Unsplash):
-
-| Uso | Foto |
-| --- | --- |
-| Hero | [photo-1585747860715-2ba37e788b70](https://images.unsplash.com/photo-1585747860715-2ba37e788b70) |
-| Balcão do bar | [photo-1514933651103-005eec06c04b](https://images.unsplash.com/photo-1514933651103-005eec06c04b) |
-| Galeria | [photo-1503951914875](https://images.unsplash.com/photo-1503951914875-452162b0f3f1) · [photo-1599351431202](https://images.unsplash.com/photo-1599351431202-1e0f0137899a) · [photo-1622286342621](https://images.unsplash.com/photo-1622286342621-4bd786c2447c) · [photo-1493256338651](https://images.unsplash.com/photo-1493256338651-d82f7acb2b38) · [photo-1535958636474](https://images.unsplash.com/photo-1535958636474-b021ee887b13) · [photo-1470337458703](https://images.unsplash.com/photo-1470337458703-46ad1756a187) |
+O site abre em `http://localhost:5173`. Para gerar a versão de produção, use `npm run build`.
 
 ---
 
-*Aviso fixo no rodapé do site: projeto demonstrativo — empresa fictícia. Venda de
-bebidas alcoólicas proibida para menores de 18 anos.*
+*O rodapé do site traz um aviso fixo: projeto demonstrativo, com empresa fictícia. Venda de bebidas alcoólicas proibida para menores de 18 anos.*
+
+Feito por [Arthur Moreira](https://github.com/ArthurMoreira79) · Distribuído sob a licença [MIT](LICENSE).

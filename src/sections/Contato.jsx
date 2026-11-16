@@ -32,11 +32,11 @@ export default function Contato() {
                 </a>
                 <br />
                 <a
-                  href="https://instagram.com/arthurmll_"
+                  href="https://instagram.com/moreiradev._"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Instagram: @arthurmll_ — gostou do projeto? Chama lá
+                  Instagram: @moreiradev._ — gostou do projeto? Chama lá
                 </a>
               </p>
             </div>

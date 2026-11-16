@@ -1,0 +1,29 @@
+[
+  {
+    "id": "lp",
+    "nome": "Luiz Paulo",
+    "apelido": "LP",
+    "especialidade": "Degradê e freestyle",
+    "descricao": "Mestre do degradê navalhado. Se tem risco, listra ou desenho, é com ele.",
+    "foto": "/img/lp.jpg",
+    "diasAtendimento": [2, 3, 4, 5, 6]
+  },
+  {
+    "id": "elias",
+    "nome": "Elias Costa",
+    "apelido": "Elias",
+    "especialidade": "Barba e navalha",
+    "descricao": "Barbeiro raiz: toalha quente, navalha e conversa boa. A barba agradece.",
+    "foto": "/img/elias.jpg",
+    "diasAtendimento": [3, 4, 5, 6]
+  },
+  {
+    "id": "eduardo",
+    "nome": "Eduardo Reis",
+    "apelido": "Edu",
+    "especialidade": "Cortes sociais e clássicos",
+    "descricao": "Do social de entrevista ao clássico de festa. Precisão de relojoeiro.",
+    "foto": "/img/eduardo.jpg",
+    "diasAtendimento": [2, 3, 5, 6]
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "corte",
+    "nome": "Corte",
+    "preco": 40,
+    "duracaoMin": 30,
+    "descricao": "Tesoura e máquina, do social ao degradê, com acabamento na navalha."
+  },
+  {
+    "id": "barba",
+    "nome": "Barba",
+    "preco": 30,
+    "duracaoMin": 30,
+    "descricao": "Toalha quente, navalha afiada e óleo pra fechar. Ritual completo."
+  },
+  {
+    "id": "corte-barba",
+    "nome": "Corte + Barba",
+    "preco": 65,
+    "duracaoMin": 60,
+    "descricao": "O combo da casa. Sai daqui pronto pra qualquer maré."
+  },
+  {
+    "id": "pezinho",
+    "nome": "Pezinho / acabamento",
+    "preco": 15,
+    "duracaoMin": 15,
+    "descricao": "Contorno rápido pra manter o corte em dia entre uma visita e outra."
+  },
+  {
+    "id": "sobrancelha",
+    "nome": "Sobrancelha",
+    "preco": 15,
+    "duracaoMin": 15,
+    "descricao": "Alinhamento na navalha, sem exagero. Só o necessário."
+  },
+  {
+    "id": "pigmentacao",
+    "nome": "Pigmentação",
+    "preco": 35,
+    "duracaoMin": 30,
+    "descricao": "Disfarça a falha e dá densidade ao corte e à barba."
+  },
+  {
+    "id": "corte-infantil",
+    "nome": "Corte infantil (até 12 anos)",
+    "preco": 35,
+    "duracaoMin": 30,
+    "descricao": "Paciência de marinheiro e corte caprichado pra tripulação miúda."
+  }
+]

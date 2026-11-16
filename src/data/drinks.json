@@ -1,0 +1,66 @@
+[
+  {
+    "id": "chopp300",
+    "nome": "Chopp da casa 300 ml",
+    "preco": 9,
+    "alcoolica": true,
+    "cortesia": true,
+    "descricao": "Gelado, colarinho na medida. O clássico do Porto."
+  },
+  {
+    "id": "chopp500",
+    "nome": "Chopp da casa 500 ml",
+    "preco": 14,
+    "alcoolica": true,
+    "cortesia": false,
+    "descricao": "Pra quem veio sem pressa."
+  },
+  {
+    "id": "longneck",
+    "nome": "Cerveja long neck",
+    "preco": 12,
+    "alcoolica": true,
+    "cortesia": false,
+    "descricao": "Rótulos gelados na geladeira do balcão."
+  },
+  {
+    "id": "caipirinha",
+    "nome": "Caipirinha",
+    "preco": 18,
+    "alcoolica": true,
+    "cortesia": false,
+    "descricao": "Limão, cachaça maranhense e gelo até a borda."
+  },
+  {
+    "id": "mare-alta",
+    "nome": "Maré Alta — drink da casa",
+    "preco": 22,
+    "alcoolica": true,
+    "cortesia": false,
+    "descricao": "Cachaça, maracujá, gengibre e um toque de mel. Sobe devagar."
+  },
+  {
+    "id": "guarana-jesus",
+    "nome": "Guaraná Jesus",
+    "preco": 6,
+    "alcoolica": false,
+    "cortesia": true,
+    "descricao": "O rosinha mais famoso do Maranhão."
+  },
+  {
+    "id": "refri-agua",
+    "nome": "Refrigerante / água",
+    "preco": 6,
+    "alcoolica": false,
+    "cortesia": true,
+    "descricao": "Pra matar a sede sem cerimônia."
+  },
+  {
+    "id": "cafe",
+    "nome": "Café coado",
+    "preco": 5,
+    "alcoolica": false,
+    "cortesia": true,
+    "descricao": "Passado na hora, forte como conversa de cais."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nome": "Rafael M.",
+    "texto": "Vim pelo degradê do LP, fiquei pelo chopp. Agora toda sexta é sagrado: corte, colarinho e papo de cais.",
+    "nota": 5
+  },
+  {
+    "id": 2,
+    "nome": "Diego Sousa",
+    "texto": "O Elias faz a melhor barba de São Luís, sem discussão. Toalha quente, navalha e um café coado. Saio novo.",
+    "nota": 5
+  },
+  {
+    "id": 3,
+    "nome": "Caio Henrique",
+    "texto": "Agendei pelo site em um minuto, cheguei e não esperei nada. Corte social com o Edu impecável, como sempre.",
+    "nota": 5
+  },
+  {
+    "id": 4,
+    "nome": "Marcos Paulo",
+    "texto": "Assinei o Clube do Porto e praticamente moro lá. Entre um corte e outro, o Maré Alta é covardia.",
+    "nota": 5
+  }
+]

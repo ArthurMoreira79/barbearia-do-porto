@@ -1,0 +1,27 @@
+:root {
+  /* Cores */
+  --cor-fundo: #14181c;
+  --cor-superficie: #1e252b;
+  --cor-superficie-2: #242d35;
+  --cor-mar: #1f4e5f;
+  --cor-latao: #c9a227;
+  --cor-latao-claro: #e3c35a;
+  --cor-texto: #f2ede4;
+  --cor-texto-suave: #a9b0b6;
+  --cor-erro: #e2694f;
+  --cor-ok: #5fb97a;
+
+  /* Tipografia */
+  --fonte-titulo: 'Bebas Neue', 'Oswald', sans-serif;
+  --fonte-corpo: 'Inter', system-ui, sans-serif;
+
+  /* Forma */
+  --raio: 6px;
+  --raio-g: 10px;
+  --borda-fina: 1px solid rgba(201, 162, 39, 0.25);
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  /* Layout */
+  --largura-max: 1120px;
+  --altura-header: 72px;
+}
